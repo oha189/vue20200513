@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组件化例子</title>
+    <script src="./vue开发版本/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <todo-item v-for="todo,index in todos" :todo123='todo' :key='index'></todo-item>
+    </div>
+</body>
+<script>
+    Vue.component("todo-item",{
+        template:"<h1>{{todo123.text}}</h1>",
+        // 生成todo123对象，等待接收值
+        props:['todo123']
+    })
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            todos:[
+                {id:0,text:"蔬菜"},
+                {id:1,text:"奶酪"},
+                {id:2,text:"肉"}
+            ]
+        }
+    })
+</script>
+</html>

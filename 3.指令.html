@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue指令</title>
+    <!-- 导入vue文件（本地） -->
+    <script src="./vue开发版本/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <span :title="message">
+            时间内容
+        </span>
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el:"#root",
+        data:{
+            message:"当前时间："+new Date().toLocaleString()
+        }
+    })
+</script>
+</html>

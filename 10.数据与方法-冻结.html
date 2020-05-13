@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue开发版本/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{message}}</p>
+        <button v-on:click="message=123">点击修改</button>
+    </div>
+</body>
+<script>
+    let data = {
+        message:"我是不可撼动的"
+    }
+    // 冻结操作，不可增删改
+    Object.freeze(data);
+    let vm = new Vue({
+        el:"#app",
+        data:data
+    })
+</script>
+</html>

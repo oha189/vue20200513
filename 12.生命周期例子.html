@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue开发版本/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{a}}
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        data:{
+            a:1,
+            b:2
+        },
+        // 生命周期：beforeCreate 钩子 在对象初始化之前执行
+        beforeCreate(){
+            // 未初始化，this.a未定义
+            console.log("beforeCreate",this.a,this);
+        },
+        // 生命周期：created 钩子 在一个实例被创建之后执行代码
+        created(){
+            // 初始化完成，this.a == 1
+            console.log("create:",this.a,this);
+        }
+    })
+    // 手动挂载（修改设置）el
+    vm.$mount(document.getElementById("app"));
+    // 销毁Vue实例
+    // vm.$destroy();
+</script>
+</html>

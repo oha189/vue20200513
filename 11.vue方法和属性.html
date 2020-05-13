@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue开发版本/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{message}}</p>
+        <button v-on:click="message=123">点击修改</button>
+    </div>
+</body>
+<script>
+    let data = {
+        message:"天气不错！"
+    }
+    let vm = new Vue({
+        el:"#app",
+        data:data
+    })
+    // vm.$data == vm._data == data
+    console.log(vm.$data === data);
+    // $el 等于 id为app的元素
+    console.log(vm.$el === document.getElementById('app'));
+    // $watch 检查数据变化，触发指定函数
+    vm.$watch("message",function(newVal,oldVal){
+        console.log(newVal,oldVal);
+    })
+</script>
+</html>

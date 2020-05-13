@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>条件语句</title>
+    <script src="./vue开发版本/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!--
+             v-if控制是否渲染
+             v-show控制是否显示
+        -->
+        <p v-if="senn">
+            存在感
+        </p>
+        <p v-show="seen">
+            看到了
+        </p>
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el:"app",
+        data:{
+            seen:false
+        }
+    })
+</script>
+</html>
